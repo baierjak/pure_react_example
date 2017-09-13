@@ -1,0 +1,1 @@
+Pure react.js example
