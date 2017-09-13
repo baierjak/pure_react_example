@@ -87,20 +87,27 @@
 
 	    _this._onClick = function () {};
 
+	    _this.state = {
+	      color: "red"
+	    };
 	    return _this;
 	  }
 
 	  _createClass(App, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      console.log("mountuju se");
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {}
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'App' },
-	        _react2.default.createElement(
-	          'h1',
-	          { className: 'App-title' },
-	          'First practising with React.js'
-	        )
+	        _react2.default.createElement(TitleComponent, { color: this.state.color, name: 'DUmmyComponenta' })
 	      );
 	    }
 	  }]);
@@ -110,6 +117,28 @@
 
 	exports.default = App;
 
+	var TitleComponent = function (_Component) {
+	  _inherits(TitleComponent, _Component);
+
+	  function TitleComponent(props) {
+	    _classCallCheck(this, TitleComponent);
+
+	    return _possibleConstructorReturn(this, (TitleComponent.__proto__ || Object.getPrototypeOf(TitleComponent)).call(this, props));
+	  }
+
+	  _createClass(TitleComponent, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'h1',
+	        { className: 'App-title', style: { color: this.state.color } },
+	        'First practising jlerg with React.js'
+	      );
+	    }
+	  }]);
+
+	  return TitleComponent;
+	}(_react.Component);
 
 	_react2.default.render(_react2.default.createElement(App, null), document.getElementById('App'));
 

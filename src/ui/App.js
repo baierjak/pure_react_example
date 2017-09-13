@@ -7,6 +7,17 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      color: "red"
+    };
+  }
+
+  componentWillMount() {
+    console.log("mountuju se");
+  }
+
+  componentDidMount() {
+    
   }
 
   _onClick = () => { 
@@ -16,13 +27,26 @@ class App extends React.Component {
   render() {
       return (
         <div className="App">
-          <h1 className="App-title">First practising with React.js</h1>
+          <TitleComponent color={this.state.color} name="DUmmyComponenta" />
         </div>
       );
   }
 }
 
 export default App;
+
+
+class TitleComponent extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render(){
+    return (
+      <h1 className="App-title" style={{color: this.state.color}}>First practising jlerg with React.js</h1>
+    );
+  }
+}
 
 
 React.render((
